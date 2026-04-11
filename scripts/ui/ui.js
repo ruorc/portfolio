@@ -57,8 +57,8 @@ export const UI = {
 
         return `
             <h1>404</h1>
-            <p>Страница <strong>"${missingPageTitle}"</strong> не найдена.</p>
-            <a href="${backNavigationPath}" data-link>Вернуться к ${lastValidPageTitle}</a>
+            <p>Page <strong>"${missingPageTitle}"</strong> not found.</p>
+            <a href="${backNavigationPath}" data-link>Back to ${lastValidPageTitle}</a>
         `;
     },
 
