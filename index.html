@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "@core": "./scripts/core/index.js",
+            "@ui": "./scripts/ui/index.js",
+            "@utils": "./scripts/src/utils.js",
+            "@logger": "./scripts/src/logger.js",
+            "@constants": "./scripts/src/constants.js"
+        }
+    }
+    </script>
+
+    <link rel="modulepreload" href="scripts/src/main.js">
+    <link rel="stylesheet" href="styles/main-style.css">
+    <link rel="icon" href="data:,">
+</head>
+
+<body>
+    <!-- Target for header.html -->
+    <div id="header" class="placeholder"></div>
+
+    <div class="loader-container" aria-live="polite" aria-label="Loading page">
+        <div class="loader">
+        </div>
+    </div>
+    
+    <!-- Main dynamic content area -->
+    <main id="content-area">
+
+        <!-- Content will be injected here -->
+        <section id="page-wrapper" class="hidden"></section>
+    </main>
+
+    <!-- Target for footer.html -->
+    <div id="footer" class="placeholder"></div>
+     
+    <script type="module" src="scripts/src/main.js"></script>
+</body>
+
+</html>

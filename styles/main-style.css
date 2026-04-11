@@ -1,0 +1,286 @@
+/* --- Variables (Centralized Theme Management) --- */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --text-muted: #666666;
+    --link-color: #007bff;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --header-bg: #2c3e50;
+    --footer-bg: #f8f9fa;
+    --transition-speed: 0.3s;
+    --border-radius: 8px;
+}
+
+/* --- Dark Theme Overrides --- */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #f4f4f4;
+    --text-muted: #cccccc;
+    --link-color: #66b2ff;
+    --card-bg: #252525;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --footer-bg: #252525;
+}
+
+/* --- Global Reset & Base Styles --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+h1 { 
+    text-align: center; 
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: opacity var(--transition-speed);
+}
+
+a:not(.active):hover { 
+    opacity: 0.8; 
+}
+
+a[data-link].active {
+    pointer-events: none; 
+    cursor: default;
+    color: var(--link-color); 
+    font-weight: 600;
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+.hidden { 
+    display: none !important; 
+}
+
+/* --- Page Transition Animation --- */
+#page-wrapper {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+#page-wrapper.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+/* --- Loader --- */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    display: flex;     
+    justify-content: center; 
+    align-items: center;
+    z-index: 9999; 
+    pointer-events: none;
+}
+
+.loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    
+    font-size: 40px;
+    font-family: system-ui, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-color);
+    
+    background: linear-gradient(var(--link-color) 0 0) no-repeat;
+    background-size: 0% 100%;
+    background-position: left;
+    
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: l1 1.2s linear infinite;
+}
+
+@keyframes l1 {
+    to { 
+        background-size: 100% 100%; 
+    }
+}
+
+.loader:before {
+    content: "Loading";
+}
+
+[data-theme="dark"] .loader {
+    -webkit-text-stroke: 1px var(--text-muted);
+}
+
+/* --- Layout Components --- */
+header {
+    background-color: var(--header-bg);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #ecf0f1;
+    margin-left: 20px;
+}
+
+nav a:hover { 
+    color: var(--link-color) 
+}
+
+/* --- Updated Main Layout --- */
+main {
+    flex: 1;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    /* Use flex to control vertical order of sections */
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Space between main projects and vanilla list */
+}
+
+footer {
+    background-color: var(--footer-bg);
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* --- Theme Toggle Button --- */
+#theme-toggle {
+    background: var(--link-color);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease, background-color var(--transition-speed);
+    box-shadow: 0 2px 5px var(--card-shadow);
+}
+
+#theme-toggle:hover { transform: scale(1.1); }
+[data-theme="light"] #theme-toggle::before { content: "🌙"; }
+[data-theme="dark"] #theme-toggle::before { content: "☀️"; }
+
+/* --- Project Grid & Cards --- */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    order: 1; /* Main projects appear first */
+    margin-bottom: 20px;
+}
+
+#vanilla-js-projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    order: 2; /* Vanilla list always stays at the bottom */
+    background-color: rgba(0, 0, 0, 0.02);
+    border: 1px dashed #ccc;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px var(--card-shadow);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px var(--card-shadow);
+}
+
+.project-card.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    filter: grayscale(0.8);
+}
+
+.project-card h3, .project-card h4 {
+    margin: 0 0 15px 0;
+    font-size: 1.3rem;
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Aligns buttons to the bottom of the card */
+}
+
+/* --- Buttons --- */
+.btn, #vanilla-js-projects-list button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+    text-align: center;
+}
+
+.btn:hover, #vanilla-js-projects-list button:hover { 
+    filter: brightness(1.1); 
+}
+
+.btn-vanilla-js-projects, #vanilla-js-projects-list button {
+    background-color: #f7df1e;
+    color: #323330;
+}
+
+.btn-wordpress {
+    background-color: #21759b;
+    color: #fff;
+}
+
+/* --- Hard Coded Error Page --- */
+.error-page {
+    text-align: center; 
+    padding: 50px;
+}
+
+.error-page strong {
+    margin: 0 5px; 
+    display: inline-block; 
+}

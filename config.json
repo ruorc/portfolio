@@ -1,0 +1,13 @@
+{
+  "ui": {
+    "titleSuffix": "Portfolio",
+    "transitionDelay": 200
+  },
+  "pages": {
+    "home": { "hasScript": false, "hasStyle": true },
+    "about": { "hasScript": false, "hasStyle": true },
+    "my-works": { "hasScript": true, "hasStyle": false },
+    "contact": { "hasScript": false, "hasStyle": false },
+    "error": { "hasScript": false, "hasStyle": false }
+  }
+}
