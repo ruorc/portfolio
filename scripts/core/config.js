@@ -70,7 +70,7 @@ export const Config = {
     },
 
     cache: {
-        get timeToLive() { return _getNestedSetting('paths.cacheTtl', DEFAULTS.PATHS.CACHE_TIME_TO_LIVE); },
+        get timeToLive() { return _getNestedSetting('paths.cacheTtl', DEFAULTS.CACHE.CACHE_TIME_TO_LIVE); },
         get isAutoCleanEnabled() { return _getNestedSetting('paths.autoCleanCache', DEFAULTS.CACHE.IS_AUTO_CLEAN_ENABLED); }
     },
 

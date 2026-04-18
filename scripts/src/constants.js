@@ -31,8 +31,7 @@ export const DEFAULTS = {
         STYLES_SUBDIRECTORY: 'styles',
         PAGES_SUBDIRECTORY: 'pages',
         COMPONENTS_SUBDIRECTORY: 'components',
-        FALLBACK_IMAGE_URL: '/assets/images/no-image.svg',
-        CACHE_TIME_TO_LIVE: 300000
+        FALLBACK_IMAGE_URL: '/assets/images/no-image.svg'
     },
     EXTENSIONS: {
         HTML_FILE: 'html',
@@ -47,6 +46,7 @@ export const DEFAULTS = {
     },
     CACHE: {
         IS_AUTO_CLEAN_ENABLED: true,
-        MIN_CLEAN_INTERVAL_MS: 30000
+        MIN_CLEAN_INTERVAL_MS: 30000,
+        CACHE_TIME_TO_LIVE: 300000
     }
 };
