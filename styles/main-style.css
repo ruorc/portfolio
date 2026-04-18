@@ -1,3 +1,5 @@
+@import url('https://googleapis.com');
+
 /* --- Variables (Centralized Theme Management) --- */
 :root {
     --bg-color: #ffffff;
@@ -149,6 +151,27 @@ nav a:hover {
     color: var(--link-color)
 }
 
+/* Логотип справа */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* Если картинки нет, будет серый круг */
+    background-color: #e0e0e0; 
+}
+
+.logo-name {
+    font-family: 'Dancing Script', cursive;
+    color: #ecf0f1;
+}
+
 /* --- Updated Main Layout --- */
 main {
     flex: 1;
@@ -170,32 +193,74 @@ footer {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* --- Theme Toggle Button --- */
-#theme-toggle {
-    background: var(--link-color);
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+/* Контейнер переключателя */
+.theme-switch-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    transition: transform 0.2s ease, background-color var(--transition-speed);
-    box-shadow: 0 2px 5px var(--card-shadow);
+    margin-left: auto; /* Прижимает переключатель к логотипу */
+    margin-right: 20px;
 }
 
-#theme-toggle:hover {
-    transform: scale(1.1);
+.theme-switch {
+    display: inline-block;
+    height: 26px;
+    position: relative;
+    width: 50px;
 }
 
-[data-theme="light"] #theme-toggle::before {
-    content: "🌙";
+.theme-switch input {
+    display: none;
 }
 
-[data-theme="dark"] #theme-toggle::before {
-    content: "☀️";
+/* Фон переключателя */
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border-radius: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+/* Кружок внутри */
+.slider:before {
+    background-color: #fff;
+    bottom: 3px;
+    content: "";
+    height: 20px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 20px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Иконки внутри */
+.icon {
+    font-size: 12px;
+    user-select: none;
+}
+
+/* Состояния при переключении */
+input:checked + .slider {
+    background-color: var(--link-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+/* Убираем старые псевдоэлементы, если они остались */
+#theme-toggle::before {
+    content: none !important;
 }
 
 /* --- Project Grid & Cards --- */
