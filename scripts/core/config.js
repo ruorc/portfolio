@@ -37,15 +37,15 @@ export const Config = {
     },
 
     paths: {
-        get scriptsDirectory() { 
+        get scriptsDirectory() {
             const directory = _getNestedSetting('paths.scriptsSubdir', DEFAULTS.PATHS.SCRIPTS_SUBDIRECTORY);
             return directory.endsWith('/') ? directory : `${directory}/`;
         },
-        get stylesDirectory() { 
+        get stylesDirectory() {
             const directory = _getNestedSetting('paths.stylesSubdir', DEFAULTS.PATHS.STYLES_SUBDIRECTORY);
             return directory.endsWith('/') ? directory : `${directory}/`;
         },
-        get pagesDirectory() { 
+        get pagesDirectory() {
             const directory = _getNestedSetting('paths.pagesSubdir', DEFAULTS.PATHS.PAGES_SUBDIRECTORY);
             return directory.endsWith('/') ? directory : `${directory}/`;
         },
@@ -77,36 +77,57 @@ export const Config = {
     asset(rootKey = "", pageName = "", assetType = "", pathGenerator = (name) => name) {
         pageName = _convertToSlug(pageName);
         if (!pageName || !assetType) return undefined;
-        
+
         rootKey = _convertToSlug(rootKey);
         const prefix = rootKey ? `${rootKey}.` : '';
 
         const isEnabled = _getNestedSetting(`${prefix}${pageName}.${assetType}`);
-        
+
         if (isEnabled === false) return null;
         return isEnabled ? pathGenerator(pageName) : undefined;
     }
 };
 
-export const getJavaScriptPath = (name = "", subDirectory = "") => 
-    _buildPath(Config.paths.scriptsDirectory, Config.extensions.js, name, subDirectory);
+export const getJavaScriptPath = (fileName = "", subDirectory = "") =>
+    _buildPath({
+        baseDirectory: Config.paths.scriptsDirectory,
+        extension: Config.extensions.js,
+        fileName, subDirectory
+    });
 
-export const getStylePath = (name = "", subDirectory = "") => 
-    _buildPath(Config.paths.stylesDirectory, Config.extensions.css, name, subDirectory);
+export const getStylePath = (fileName = "", subDirectory = "") =>
+    _buildPath({
+        baseDirectory: Config.paths.stylesDirectory,
+        extension: Config.extensions.css,
+        fileName, subDirectory
+    });
 
-export const getHtmlPath = (baseDirectory = "", name = "", subDirectory = "") => 
-    _buildPath(baseDirectory, Config.extensions.html, name, subDirectory);
+export const getHtmlPath = (baseDirectory = "", fileName = "", subDirectory = "") =>
+    _buildPath({
+        extension: Config.extensions.html,
+        baseDirectory, fileName, subDirectory
+    });
 
-const _buildPath = (directory = "", extension = "", fileName = "", subDirectory = "") => {
-    if (!fileName || !directory) return "";
-    
+const _buildPath = (params = {}) => {
+    const requirements = {
+        fileName: (val) => typeof val === 'string' && val.length > 0,
+        baseDirectory: (val) => typeof val === 'string' && val.length > 0
+    };
+
+    Object.keys(requirements).forEach(key => {
+        if (!requirements[key](params[key])) {
+            return "";
+        }
+    });
+
+    const { baseDirectory = "", extension = "", fileName = "", subDirectory = "" } = params;
     const segments = [
-        _convertToSlug(directory), 
-        _convertToSlug(subDirectory), 
+        _convertToSlug(baseDirectory),
+        _convertToSlug(subDirectory),
         _convertToSlug(fileName)
     ].filter(Boolean);
-    
-    return `${segments.join('/')}${extension}`;
+
+    return `${segments.join('/')}.${_convertToSlug(extension)}`;
 };
 
 const _convertToSlug = (text = "") => {
@@ -114,6 +135,7 @@ const _convertToSlug = (text = "") => {
     return String(text)
         .trim()
         .replace(/^#/, '')
+        .replace(/^\.+/g, '')
         .replace(/\/+/g, '/')
         .replace(/^\/|\/$/g, '')
         .toLowerCase()
