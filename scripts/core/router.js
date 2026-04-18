@@ -26,6 +26,8 @@ export const Router = {
             }, Config.ui.transitionDelay);
         }
 
+        await Loader.manageStyle(normalizedPageName, true);
+        
         let pageContentHtml = '';
         let finalTargetPageName = normalizedPageName;
         const pageResourcePath = getHtmlPath(Config.paths.pagesDirectory, normalizedPageName);
@@ -36,8 +38,6 @@ export const Router = {
             }
 
             pageContentHtml = await Api.fetchPage(pageResourcePath);
-            
-            await Loader.manageStyle(normalizedPageName, true);
 
             State.isError = false;
             State.currentPage = normalizedPageName;
