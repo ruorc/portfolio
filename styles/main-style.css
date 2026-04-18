@@ -424,7 +424,7 @@ a:not(.active):hover,
 }
 
 .showcase-description {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-muted);
     line-height: 1.8;
     min-height: 5.4em;
