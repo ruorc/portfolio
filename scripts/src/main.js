@@ -10,8 +10,8 @@ async function bootstrapApplication() {
         await Layout.load();
 
         const resolveCurrentPath = () => {
-            const rawPath = Config.routing.isHash 
-                ? window.location.hash.slice(1) 
+            const rawPath = Config.routing.isHash
+                ? window.location.hash.slice(1)
                 : window.location.pathname;
             return convertToSlug(rawPath) || Config.routing.homePage;
         };
@@ -55,14 +55,14 @@ async function bootstrapApplication() {
 
     } catch (criticalError) {
         const mainContainer = document.querySelector('main');
-        
+
         if (mainContainer) {
             mainContainer.className = 'error-page';
             mainContainer.innerHTML = `
                 <div class="critical-error">
-                    <h1>Упс! Что-то пошло не так</h1>
-                    <p>Не удалось загрузить конфигурацию приложения.</p>
-                    <button onclick="window.location.reload()">Попробовать снова</button>
+                    <h1>Oops! Something went wrong</h1>
+                    <p>Failed to load the application configuration.</p>
+                    <button onclick="window.location.reload()">Try again</button>
                 </div>
             `;
         }
