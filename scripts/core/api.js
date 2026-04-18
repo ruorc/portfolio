@@ -9,7 +9,7 @@ export const Api = {
 
     async fetchResource(resourceUrl = "", resourceType = 'html') {
         if (!resourceUrl) return "";
-        
+
         const absoluteUrl = normalizeResourcePath(resourceUrl);
         const currentTimestamp = Date.now();
 
@@ -30,15 +30,18 @@ export const Api = {
             try {
                 const response = await fetch(absoluteUrl);
                 if (!response.ok) throw new Error(`HTTP_STATUS_${response.status}`);
-                
+
                 const responseData = await response.text();
+                const url = new URL(absoluteUrl); 
+                const pathForTest = url.pathname.startsWith('/') ? url.pathname.slice(1) : url.pathname;
+
                 const pattern = new RegExp(`^${Config.paths.pagesDirectory}`, "i");
-                const isPageResource = pattern.test(resourceUrl);
+                const isPageResource = pattern.test(pathForTest);
 
                 if (isPageResource && cacheCategory) {
-                    cacheCategory.set(absoluteUrl, { 
-                        data: responseData, 
-                        timestamp: Date.now() 
+                    cacheCategory.set(absoluteUrl, {
+                        data: responseData,
+                        timestamp: Date.now()
                     });
                 }
 
@@ -60,11 +63,11 @@ export const Api = {
         if (!Config.cache.isAutoCleanEnabled || this._isCleanerInitialized) {
             return;
         }
-        
+
         this._isCleanerInitialized = true;
-        
+
         const cleanIntervalMs = Math.max(
-            Config.cache.timeToLive / 2, 
+            Config.cache.timeToLive / 2,
             DEFAULTS.CACHE.MIN_CLEAN_INTERVAL_MS
         );
 
