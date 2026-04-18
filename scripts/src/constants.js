@@ -27,17 +27,17 @@ export const DEFAULTS = {
         NOT_FOUND_TEMPLATE: '404'
     },
     PATHS: {
-        SCRIPTS_SUBDIRECTORY: 'scripts/',
-        STYLES_SUBDIRECTORY: 'styles/',
-        PAGES_SUBDIRECTORY: 'pages/',
-        COMPONENTS_SUBDIRECTORY: 'components/',
+        SCRIPTS_SUBDIRECTORY: 'scripts',
+        STYLES_SUBDIRECTORY: 'styles',
+        PAGES_SUBDIRECTORY: 'pages',
+        COMPONENTS_SUBDIRECTORY: 'components',
         FALLBACK_IMAGE_URL: '/assets/images/no-image.svg',
         CACHE_TIME_TO_LIVE: 300000
     },
     EXTENSIONS: {
-        HTML_FILE: '.html',
-        JAVASCRIPT_FILE: '.js',
-        CSS_FILE: '.css'
+        HTML_FILE: 'html',
+        JAVASCRIPT_FILE: 'js',
+        CSS_FILE: 'css'
     },
     UI: {
         MAIN_CONTAINER_ID: 'page-wrapper',
