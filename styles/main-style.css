@@ -260,11 +260,11 @@ footer {
     text-align: center;
 }
 
-.btn:hover, #vanilla-js-projects-list button:hover { 
+.btn:hover, #vanilla-js-projects-list a:hover { 
     filter: brightness(1.1); 
 }
 
-.btn-vanilla-js-projects, #vanilla-js-projects-list button {
+.btn-vanilla-js-projects, #vanilla-js-projects-list a {
     background-color: #f7df1e;
     color: #323330;
 }
