@@ -3,26 +3,32 @@ import { writeDebugLog } from '@logger';
 export default function initialize(pageContainer = null) {
     if (!pageContainer) return;
 
-    const toggleProjectsButton = pageContainer.querySelector('#toggle-vanilla-js-projects');
-    const projectsListContainer = pageContainer.querySelector('#vanilla-js-projects-list');
+    const toggleButtons = pageContainer.querySelectorAll('.btn-toggle-projects');
 
-    if (!toggleProjectsButton || !projectsListContainer) {
-        return;
-    }
+    const toggleProjectsVisibility = (event) => {
+        const button = event.currentTarget;
+        const targetId = button.dataset.target;
+        const targetBlock = document.getElementById(targetId);
 
-    const toggleProjectsVisibility = () => {
-        const isListHidden = projectsListContainer.classList.toggle('hidden');
-        
-        toggleProjectsButton.textContent = isListHidden ? 'Show projects' : 'Hide projects';
-        
-        if (!isListHidden) {
-            projectsListContainer.scrollIntoView({ behavior: 'smooth' });
+        if (!targetBlock) return;
+
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        const nextState = !isExpanded;
+
+        targetBlock.classList.toggle('hidden', !nextState);
+        targetBlock.toggleAttribute('hidden', !nextState);
+
+        button.setAttribute('aria-expanded', String(nextState));
+        button.textContent = nextState ? 'Hide projects' : 'Show projects';
+
+        if (nextState) {
+            targetBlock.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     };
 
-    toggleProjectsButton.addEventListener('click', toggleProjectsVisibility);
+    toggleButtons.forEach(btn => btn.addEventListener('click', toggleProjectsVisibility));
 
     return () => {
-        toggleProjectsButton.removeEventListener('click', toggleProjectsVisibility);
+        toggleButtons.forEach(btn => btn.removeEventListener('click', toggleProjectsVisibility));
     };
 }

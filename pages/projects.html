@@ -6,13 +6,14 @@
     <div class="project-card">
         <h3>Vanilla JS Projects</h3>
         <p>Projects created in pure JavaScript without the use of libraries.</p>
-        <a href="javascript:void(0)" class="btn btn-vanilla-js-projects" id="toggle-vanilla-js-projects">Show projects</a>
+        <button id="toggle-vanilla-js-projects" class="btn btn-vanilla-js-projects btn-toggle-projects" data-target="vanilla-js-projects-list" aria-expanded="false">Show projects</button>
     </div>
 
     <div class="project-card disabled">
         <h3>WordPress Site</h3>
         <p>Comming soon</p>
-        <a href="#" class="btn btn-wordpress" tabindex="-1" aria-disabled="true">Show projects</a>
+        <button class="btn btn-wordpress-projects btn-toggle-projects" data-target="" aria-expanded="false" disabled>Show projects</button>
+        <!-- <a href="#" class="btn btn-wordpress" tabindex="-1" aria-disabled="true">Show projects</a> -->
     </div>
 </section>
 <section id="vanilla-js-projects-list" class="hidden">
