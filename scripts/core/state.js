@@ -1,3 +1,5 @@
+import { Config } from '@core';
+
 export const State = {
     currentPage: null,
     isNavigating: false,
