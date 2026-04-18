@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="he">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+
+    <title>X-O Game</title>
+  </head>
+
+  <body>
+    <main class="game-page">
+      <section class="game-card">
+        <div class="top-bar">
+          <h1>איקס עיגול</h1>
+          <p class="subtitle">משחק מודרני בעיצוב נקי ויוקרתי</p>
+        </div>
+
+        <div class="status-box">
+          <h2>תור נוכחי</h2>
+          <div class="current-player">X</div>
+        </div>
+
+        <div class="board-wrapper">
+          <!-- <div class="labels-y">
+                    <span>3</span>
+                    <span>2</span>
+                    <span>1</span>
+                </div> -->
+
+          <div class="board-container">
+            <div class="board">
+              <button class="cell" name="a3" data-index="0"></button>
+              <button class="cell" name="b3" data-index="1"></button>
+              <button class="cell" name="c3" data-index="2"></button>
+
+              <button class="cell" name="a2" data-index="3"></button>
+              <button class="cell" name="b2" data-index="4"></button>
+              <button class="cell" name="c2" data-index="5"></button>
+
+              <button class="cell" name="a1" data-index="6"></button>
+              <button class="cell" name="b1" data-index="7"></button>
+              <button class="cell" name="c1" data-index="8"></button>
+            </div>
+
+            <!-- <div class="labels-x">
+                        <span>a</span>
+                        <span>b</span>
+                        <span>c</span>
+                    </div> -->
+          </div>
+        </div>
+
+        <div class="game-info">
+          <p>לחץ על תא פנוי כדי להתחיל לשחק</p>
+        </div>
+
+        <div class="actions hidden">
+          <button class="reset-btn">איפוס משחק</button>
+        </div>
+      </section>
+    </main>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

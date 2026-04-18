@@ -1,0 +1,226 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+    
+    /* Safari */
+    -webkit-user-select: none; 
+    /* Firefox */
+    -moz-user-select: none;
+    /* Internet Explorer/Edge */
+    -ms-user-select: none;
+    /* Standard Syntax */
+    user-select: none;
+}
+
+.hidden {
+    display: none;
+}
+
+/* BACKGROUND */
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* MAIN CARD */
+.game-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    text-align: center;
+}
+
+/* TITLE */
+.top-bar h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+/* STATUS */
+.status-box {
+    margin-bottom: 20px;
+}
+
+.current-player {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 5px;
+    color: #38bdf8;
+}
+
+.o-color {
+    color: #f472b6;
+}
+
+/* BOARD */
+.board-wrapper {
+    direction: ltr; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 20px;
+
+   /*  display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-bottom: 20px; */
+}
+
+.labels-y {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+    height: 290px;
+    padding: 0 10px; 
+    color: #94a3b8;
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 290px;
+    padding: 30px 15px 30px 0;
+    font-weight: bold;
+    color: #94a3b8;
+    font-size: 18px; */
+}
+
+.labels-x {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    font-weight: bold;
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.board-container {
+    display: flex;
+    flex-direction: column;
+    width: 290px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 90px);
+    grid-template-rows: repeat(3, 90px);
+    gap: 10px;
+    margin: 0 !important;
+}
+
+/* CELL */
+.cell {
+    width: 90px;
+    height: 90px;
+    font-size: 36px;
+    font-weight: 800;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.03);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    padding: 0;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cell:disabled {
+    cursor: default;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.cell.x-player {
+    color: #38bdf8;
+    text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+}
+
+.cell.o-player {
+    color: #f472b6;
+    text-shadow: 0 0 15px rgba(244, 114, 182, 0.5);
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.cell span {
+    pointer-events: none;
+    display: block;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.winner-cell {
+    background-color: #2ecc71 !important; /* Зеленый фон */
+    color: white !important;
+    transform: scale(1.1); /* Небольшое увеличение для эффекта */
+    transition: all 0.3s ease;
+}
+
+/* HOVER (NOT DISABLED) */
+.cell:not(:disabled):hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* INFO */
+.game-info {
+    font-size: 14px;
+    color: #cbd5f5;
+    margin-bottom: 18px;
+}
+
+/* RESET BUTTON */
+.reset-btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+    background: #38bdf8;
+    color: black;
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.reset-btn:hover {
+    background: #0ea5e9;
+    transform: scale(1.05);
+}
