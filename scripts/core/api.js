@@ -72,7 +72,7 @@ export const Api = {
             const currentTimestamp = Date.now();
             let evictedItemsCount = 0;
 
-            ['html', 'css', 'js'].forEach(resourceType => {
+            Object.keys(Config.extensions).forEach(resourceType => {
                 const cacheCategory = State.cache?.[resourceType];
                 if (!cacheCategory) return;
 
