@@ -33,6 +33,7 @@ export const Config = {
         get isHash() { return _getNestedSetting('routing.useHash', DEFAULTS.ROUTING.USE_HASH_NAVIGATION); },
         get homePage() { return _getNestedSetting('routing.defaultPage', DEFAULTS.ROUTING.HOME_PAGE_NAME); },
         get errorPage() { return DEFAULTS.ROUTING.ERROR_PAGE_NAME; },
+        get singleProjectStyle() { return DEFAULTS.ROUTING.SHARED_PROJECTS_STYLE_NAME; },
         get template404() { return DEFAULTS.ROUTING.NOT_FOUND_TEMPLATE; }
     },
 
@@ -47,6 +48,10 @@ export const Config = {
         },
         get pagesDirectory() {
             const directory = _getNestedSetting('paths.pagesSubdir', DEFAULTS.PATHS.PAGES_SUBDIRECTORY);
+            return directory.endsWith('/') ? directory : `${directory}/`;
+        },
+        get projectsDirectory() {
+            const directory = _getNestedSetting('paths.projectsSubdir', DEFAULTS.PATHS.PROJECTS_SUBDIRECTORY);
             return directory.endsWith('/') ? directory : `${directory}/`;
         },
         get componentsDirectory() {

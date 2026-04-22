@@ -8,6 +8,7 @@
     "about": { "hasScript": false, "hasStyle": true },
     "projects": { "hasScript": true, "hasStyle": false },
     "contact": { "hasScript": false, "hasStyle": false },
-    "error": { "hasScript": false, "hasStyle": false }
+    "error": { "hasScript": false, "hasStyle": false },
+    "single-project": { "hasScript": false, "hasStyle": true }
   }
 }

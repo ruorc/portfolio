@@ -64,8 +64,8 @@ export const Loader = {
             if (shouldActivateImmediately) this._removeUnusedStyles(null);
             return null;
         }
-
-        const pageSlug = convertToSlug(pageName);
+        const pattern = new RegExp(`^${Config.paths.projectsDirectory}`, "i");
+        const pageSlug = pattern.test(pageName) ? Config.routing.singleProjectStyle: convertToSlug(pageName);
         const rawStylePath = Config.asset(
             Config.paths.pagesDirectory,
             pageSlug,
