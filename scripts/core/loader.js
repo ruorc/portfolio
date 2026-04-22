@@ -6,7 +6,7 @@ export const Loader = {
     _cleanupTasks: new Map(),
     _currentPageSlug: null,
 
-    isResourceCached(resourceUrl = "", resourceType = "html") {
+    isResourceCached(resourceUrl = "", resourceType = Config.extensions.html) {
         if (!resourceUrl) return false;
 
         const absoluteUrl = normalizeResourcePath(resourceUrl);
@@ -79,7 +79,7 @@ export const Loader = {
         }
 
         const absoluteStylePath = normalizeResourcePath(rawStylePath);
-        const isCssCached = this.isResourceCached(absoluteStylePath, 'css');
+        const isCssCached = this.isResourceCached(absoluteStylePath, Config.extensions.css);
 
         if (isCssCached && !shouldActivateImmediately) {
             this._removeUnusedStyles(null, true);
@@ -87,7 +87,7 @@ export const Loader = {
         }
 
         if (!isCssCached) {
-            await Api.fetchResource(absoluteStylePath, 'css');
+            await Api.fetchResource(absoluteStylePath, Config.extensions.css);
         }
 
         const styleLinkElement = await this._injectStyleTag(absoluteStylePath, !shouldActivateImmediately);
@@ -107,10 +107,10 @@ export const Loader = {
         const pagesDirectory = Config.paths.pagesDirectory;
         const absoluteHtmlPath = normalizeResourcePath(getHtmlPath(pagesDirectory, pageSlug));
 
-        const isHtmlCached = this.isResourceCached(absoluteHtmlPath, 'html');
+        const isHtmlCached = this.isResourceCached(absoluteHtmlPath, Config.extensions.html);
         if (!isHtmlCached) {
             if (await checkFileExists(absoluteHtmlPath)) {
-                Api.fetchResource(absoluteHtmlPath, 'html').catch(() => { });
+                Api.fetchResource(absoluteHtmlPath, Config.extensions.html).catch(() => { });
             }
         }
         await this.manageStyle(pageName, false);
