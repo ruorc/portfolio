@@ -78,7 +78,7 @@ export const UI = {
 
     updateActiveNavigationLink(pageName = "") {
         const activeSlug = convertToSlug(pageName);
-        const navigationLinks = document.querySelectorAll(SELECTORS.HEADER_NAV_LINKS);
+        const navigationLinks = document.querySelectorAll(`${SELECTORS.HEADER_NAV_LINKS}, ${SELECTORS.LOGO_LINK}`);
         
         navigationLinks.forEach((linkElement) => {
             const rawHref = linkElement.getAttribute('href')?.replace(/^#/, '').replace(/^\//, '') || "";

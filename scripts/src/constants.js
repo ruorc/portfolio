@@ -2,6 +2,7 @@ export const CONFIG_URL = './config.json';
 
 export const SELECTORS = {
     NAV_LINK: 'a[data-link]',
+    LOGO_LINK: 'a.logo[data-link]',
     HEADER_NAV_LINKS: 'header nav a[data-link]',
     THEME_TOGGLER_BUTTON: '#theme-toggle'
 };
