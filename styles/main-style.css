@@ -62,7 +62,7 @@ h1 { text-align: center; }
 /* --- Links & Nav --- */
 a { color: var(--link-color); text-decoration: none; transition: opacity var(--transition-speed); }
 a:not(.active):hover { opacity: 0.8; }
-a[data-link].active { pointer-events: none; cursor: default; color: var(--link-color); font-weight: 600; opacity: 0.8; }
+a[data-link].active { pointer-events: none; cursor: default; color: var(--link-color); text-shadow: 0.5px 0 0 currentColor, -0.5px 0 0 currentColor;  opacity: 0.8; }
 
 header { background-color: var(--header-bg); color: var(--color-white); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
 nav a { color: var(--color-nav-text); margin-left: var(--space-md); }
