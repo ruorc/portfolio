@@ -18,8 +18,19 @@
     }
     </script>
 
+    <script>
+        (function() {
+            const savedThemePreference = localStorage.getItem('theme') || 
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            
+            document.documentElement.setAttribute('data-theme', savedThemePreference);
+        })();
+    </script>
+
     <link rel="modulepreload" href="scripts/src/main.js">
+    
     <link rel="stylesheet" href="styles/main-style.css">
+
     <link rel="icon" href="data:,">
 </head>
 
@@ -31,7 +42,7 @@
         <div class="loader">
         </div>
     </div>
-    
+
     <!-- Main dynamic content area -->
     <main id="content-area">
 
@@ -41,7 +52,7 @@
 
     <!-- Target for footer.html -->
     <div id="footer" class="placeholder"></div>
-     
+
     <script type="module" src="scripts/src/main.js"></script>
 </body>
 
