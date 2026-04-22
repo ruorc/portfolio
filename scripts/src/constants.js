@@ -24,14 +24,16 @@ export const DEFAULTS = {
         USE_HASH_NAVIGATION: true,
         HOME_PAGE_NAME: 'home',
         ERROR_PAGE_NAME: 'error',
+        SHARED_PROJECTS_STYLE_NAME: 'single-project',
         NOT_FOUND_TEMPLATE: '404'
     },
     PATHS: {
         SCRIPTS_SUBDIRECTORY: 'scripts',
         STYLES_SUBDIRECTORY: 'styles',
         PAGES_SUBDIRECTORY: 'pages',
+        PROJECTS_SUBDIRECTORY: 'projects',
         COMPONENTS_SUBDIRECTORY: 'components',
-        FALLBACK_IMAGE_URL: '/assets/images/no-image.svg'
+        FALLBACK_IMAGE_URL: 'assets/images/no-image.svg'
     },
     EXTENSIONS: {
         HTML_FILE: 'html',

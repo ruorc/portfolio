@@ -392,68 +392,6 @@ a:not(.active):hover,
     filter: none;
 }
 
-/* --- Hero Section --- */
-.showcase-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1100px;
-    margin: 20px auto;
-    padding: 0 20px;
-    gap: 60px;
-}
-
-.showcase-content {
-    flex: 1;
-    text-align: left;
-}
-
-.showcase-title {
-    min-height: 1.2em;
-    color: var(--text-color);
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
-    line-height: 1.1;
-    margin: 20px 0;
-
-    @supports (-webkit-background-clip: text) {
-        background: linear-gradient(45deg, var(--text-color), #f7df1e);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-}
-
-.showcase-description {
-    font-size: 1rem;
-    color: var(--text-muted);
-    line-height: 1.8;
-    min-height: 5.4em;
-    margin-bottom: 40px;
-    max-width: 500px;
-}
-
-.showcase-actions {
-    display: flex;
-    gap: 15px;
-}
-
-.showcase-media {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.showcase-media img {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-    aspect-ratio: 1 / 1; 
-    background-color: rgba(0, 0, 0, 0.03); /* Легкий фон, пока картинка грузится */
-    border-radius: 20px;
-    box-shadow: 0 20px 50px var(--card-shadow);
-    display: block;
-}
-
 /* Кнопки в стиле JS */
 .btn-vanilla-js-project-view {
     background-color: #f7df1e !important;
