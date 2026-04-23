@@ -5,10 +5,10 @@ import { convertToSlug, formatPageNameDisplay } from '@utils';
 export const UI = {
     getContainer: () => document.getElementById(Config.ui.containerId),
     
-    getLoader: () => document.querySelector(Config.ui.loaderId),
+    _getLoader: () => document.querySelector(Config.ui.loaderId),
 
     toggleLoader(isShown = false) {
-        const loaderElement = this.getLoader();
+        const loaderElement = this._getLoader();
         if (loaderElement) {
             loaderElement.classList.toggle('hidden', !isShown);
         }
@@ -44,7 +44,7 @@ export const UI = {
             containerElement.classList.add('visible');
         });
         
-        const pageTitleContent = State.isError ? "404" : this.getNavigationLinkText(pageName);
+        const pageTitleContent = State.isError ? "404" : this._getNavigationLinkText(pageName);
         document.title = `${pageTitleContent} | ${Config.ui.titleSuffix}`;
     },
 
@@ -52,8 +52,8 @@ export const UI = {
         const lastValidPage = State.currentPage || Config.routing.homePage;
         const backNavigationPath = `${Config.routing.isHash ? '#' : '/'}${convertToSlug(lastValidPage)}`;
         
-        const missingPageTitle = this.getNavigationLinkText(pageName);
-        const lastValidPageTitle = this.getNavigationLinkText(lastValidPage);
+        const missingPageTitle = this._getNavigationLinkText(pageName);
+        const lastValidPageTitle = this._getNavigationLinkText(lastValidPage);
 
         return `
             <h1>404</h1>
@@ -62,7 +62,7 @@ export const UI = {
         `;
     },
 
-    getNavigationLinkText(pageName = "") {
+    _getNavigationLinkText(pageName = "") {
         const targetSlug = convertToSlug(pageName);
         const navigationLinks = document.querySelectorAll(SELECTORS.NAV_LINK);
         
@@ -72,8 +72,11 @@ export const UI = {
                 return linkElement.innerText;
             }
         }
+
+        const pattern = new RegExp(`^${Config.paths.projectsDirectory}`, "i");
+        const slug = targetSlug.replace(pattern, "");
         
-        return formatPageNameDisplay(pageName);
+        return formatPageNameDisplay(slug);
     },
 
     updateActiveNavigationLink(pageName = "") {
