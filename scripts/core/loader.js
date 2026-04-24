@@ -65,7 +65,7 @@ export const Loader = {
             return null;
         }
         const pattern = new RegExp(`^${Config.paths.projectsDirectory}`, "i");
-        const pageSlug = pattern.test(pageName) ? Config.routing.singleProjectStyle: convertToSlug(pageName);
+        const pageSlug = pattern.test(pageName) ? Config.routing.singleProjectStyle : convertToSlug(pageName);
         const rawStylePath = Config.asset(
             Config.paths.pagesDirectory,
             pageSlug,
