@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Explorer</title>
+    
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>World Countries Directory</h1>
+        
+        <div class="search-box">
+            <input id="searchInput" placeholder="Search by country or capital..." autocomplete="off" />
+            <button id="searchButton">Search</button>
+        </div>
+        
+        <div class="table-wrapper">
+            <table id="countriesTable">
+                <thead>
+                    <tr>
+                        <th class="sortable" onclick="sortData('name')">Country <span id="name-icon" class="sort-icon"></span></th>
+                        <th class="sortable" onclick="sortData('capital')">Capital <span id="capital-icon" class="sort-icon"></span></th>
+                        <th>Currency</th>
+                        <th>Flag</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@
 }
 
 .showcase-title {
-    color: var(--text-color); font-size: var(--fz-lg); font-weight: 800; line-height: 1.1; margin: var(--space-md) 0;
+    color: var(--text-color); font-size: var(--fz-lg); font-weight: 800; line-height: 1.22; margin: var(--space-md) 0;
     background: linear-gradient(45deg, var(--text-color), var(--color-js));
     -webkit-background-clip: text;
     background-clip: text;
