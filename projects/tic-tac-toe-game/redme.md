@@ -1,7 +1,7 @@
 # Modern Tic-Tac-Toe (X-O)
 
 <p align="center">
-  <img src="images/game-x-o.png" alt="Game Preview" width="600">
+  <img src="images/tic-tac-toe-game.png" alt="Tic-Tac-Toe Game Preview" width="600">
 </p>
 
 A clean, modern, and interactive Tic-Tac-Toe game built with Vanilla JavaScript, HTML5, and CSS3. The project features a minimalist UI with smooth transitions and full Hebrew localization (RTL).
@@ -11,7 +11,7 @@ A clean, modern, and interactive Tic-Tac-Toe game built with Vanilla JavaScript,
 This project is optimized for the **Live Server** extension in VS Code.
 
 ### Option 1: Download as ZIP (Quickest)
-1. **Download the project**: [Click here to download this game folder](https://github.com/ruorc/portfolio/projects/game-x-o/game-x-o.zip)
+1. **Download the project**: [Click here to download this game folder](https://github.com/ruorc/portfolio/projects/tic-tac-toe-game/tic-tac-toe-game.zip)
 2. **Extract** the ZIP archive on your computer.
 
 ### Option 2: Clone via Git
@@ -21,7 +21,7 @@ This project is optimized for the **Live Server** extension in VS Code.
     ```
 2.  **Navigate to the project folder**:
     ```bash
-    cd projects/game-x-o
+    cd projects/tic-tac-toe-game
     ```
 
 3.  **Open in VS Code**:
