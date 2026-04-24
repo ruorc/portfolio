@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.todo-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2d3436;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.input-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    padding: 14px 18px;
+    border: 2px solid #edf2f7;
+    border-radius: 12px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #a29bfe;
+    box-shadow: 0 0 0 3px rgba(162, 155, 254, 0.2);
+}
+
+button#addButton {
+    background-color: #6c5ce7;
+    border: none;
+    padding: 0 20px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button#addButton:not(:disabled):hover {
+    background-color: #5849be;
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background: #f8f9fa;
+    margin-bottom: 12px;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #f1f2f6;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.task-text {
+    flex: 1;
+    color: #2d3436;
+    font-size: 16px;
+    word-break: break-all;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-action {
+    background: white;
+    border: 1px solid #eee;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 8px;
+    border-radius: 8px;
+    line-height: 1;
+    transition: all 0.2s;
+}
+
+.btn-action:hover {
+    background: #f1f2f6;
+    transform: scale(1.1);
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #a0a0a0 !important;
+    opacity: 0.6;
+}
+
+.task-text {
+    flex: 1;
+    color: #2d3436;
+    font-size: 16px;
+    word-break: break-all;
+    cursor: pointer; 
+    user-select: none; 
+}
