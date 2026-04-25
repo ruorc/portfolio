@@ -20,7 +20,7 @@ An interactive dashboard that fetches and displays real-time data about world co
    ```
 2. **Navigate to the project**:
    ```bash
-   cd YOUR_FOLDER_NAME
+   cd projects/country-explorer
    ```
 3. **Open in VS Code**:
    Launch the project and use the **Live Server** extension.
