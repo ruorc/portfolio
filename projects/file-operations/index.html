@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS File CRUD</title>
+    
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Text Editor</h2>
+        
+        <div class="controls">
+            <button id="btnNew">New File</button>
+            <button id="btnOpen">Open File</button>
+            <button id="btnSave" title="" disabled>Save</button>
+            <button id="btnSaveAs" title="" disabled>Save As</button>
+            <button id="btnUnload" disabled>Unload File</button>
+            <button id="btnClear" disabled>Clear Editor</button>
+        </div>
+
+        <div id="fileName" class="status">Current File: No file selected</div>
+        
+        <textarea id="editor" placeholder="Start typing or open a file..."></textarea>
+    </div>
+    
+    <dialog id="confirmDialog">
+        <div class="dialog-content">
+            <p id="dialogMessage">You have unsaved changes. Continue?</p>
+            <div class="dialog-actions">
+                <button id="dialogCancel">Cancel</button>
+                <button id="dialogConfirm">Confirm</button>
+            </div>
+        </div>
+    </dialog>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
