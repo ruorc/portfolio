@@ -25,7 +25,7 @@ I build scalable web applications and interactive systems focusing on performanc
 *   **[Task Manager](https://github.com/ruorc/portfolio/tree/main/projects/to-do-list)** — Persistent storage application using `localStorage` and `crypto.randomUUID()`.
 
 ### 🎮 Interactive Experience
-*   **[Modern Tic-Tac-Toe](https://github.com/ruorc/portfolio/tree/main/projects/tic-tac-toe-game)** — Clean  X-O implementation with an optimized win-detection algorithm and full Hebrew (RTL) localization.
+*   **[Modern Tic-Tac-Toe](https://github.com/ruorc/portfolio/tree/main/projects/tic-tac-toe-game)** — Clean X-O implementation with an optimized win-detection algorithm and full Hebrew (RTL) localization.
 
 ---
 ## 📫 Let's Connect
