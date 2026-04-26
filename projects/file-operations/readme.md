@@ -9,7 +9,7 @@ A professional browser-based text editor that provides a desktop-like experience
 ## 🚀 How to Run
 
 ### Option 1: Download as ZIP (Quickest)
-1. **Download**: [Click here to download this project folder](https://github.com/ruorc/portfolio/projects/file-operations/file-operations.zip)
+1. **Download**: [Click here to download this project folder](https://github.com/ruorc/portfolio/tree/main/projects/file-operations/file-operations.zip)
 2. **Extract** the ZIP archive.
 3. **Open the folder** in VS Code and click **"Go Live"** (Live Server).
 

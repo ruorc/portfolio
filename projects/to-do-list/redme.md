@@ -11,7 +11,7 @@ A sleek, functional, and responsive To-Do List application. This project focuses
 You can run this project locally using one of the following options:
 
 ### Option 1: Download as ZIP (Quickest)
-1. **Download the project**: [Click here to download this project folder](https://github.com/ruorc/portfolio/projects/to-do-list/to-do-list.zip)
+1. **Download the project**: [Click here to download this project folder](https://github.com/ruorc/portfolio/tree/main/projects/to-do-list/to-do-list.zip)
 2. **Extract** the ZIP archive.
 3. **Open the folder** in VS Code and click **"Go Live"** (Live Server extension).
 

@@ -9,7 +9,7 @@ A high-performance, lightweight SPA framework built from scratch with Vanilla Ja
 ## 🚀 How to Run
 
 ### Option 1: Download as ZIP (Quickest)
-1. **Download**: [Click here to download this project folder](https://github.com/ruorc/portfolio/projects/single-page-application/single-page-application.zip)
+1. **Download**: [Click here to download this project folder](https://github.com/ruorc/portfolio/tree/main/projects/single-page-application/single-page-application.zip)
 2. **Extract** the ZIP archive.
 3. **Open the folder** in VS Code and click **"Go Live"**.
    *Note: This engine uses ES Modules and Fetch API, so it **requires** a local server (Live Server) to run.*

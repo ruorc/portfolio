@@ -11,7 +11,7 @@ A clean, modern, and interactive Tic-Tac-Toe game built with Vanilla JavaScript,
 This project is optimized for the **Live Server** extension in VS Code.
 
 ### Option 1: Download as ZIP (Quickest)
-1. **Download the project**: [Click here to download this game folder](https://github.com/ruorc/portfolio/projects/tic-tac-toe-game/tic-tac-toe-game.zip)
+1. **Download the project**: [Click here to download this game folder](https://github.com/ruorc/portfolio/tree/main/projects/tic-tac-toe-game/tic-tac-toe-game.zip)
 2. **Extract** the ZIP archive on your computer.
 
 ### Option 2: Clone via Git

@@ -9,7 +9,7 @@ An interactive dashboard that fetches and displays real-time data about world co
 ## 🚀 How to Run
 
 ### Option 1: Download as ZIP (Quickest)
-1. **Download**: [Click here to download this project folder](https://github.com/ruorc/portfolio/projects/country-explorer/country-explorer.zip)
+1. **Download**: [Click here to download this project folder](https://github.com/ruorc/portfolio/tree/main/projects/country-explorer/country-explorer.zip)
 2. **Extract** the ZIP archive.
 3. **Open the folder** in VS Code and click **"Go Live"**.
 

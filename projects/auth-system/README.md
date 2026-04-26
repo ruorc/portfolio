@@ -9,7 +9,7 @@ A sophisticated authentication system built with Vanilla JavaScript. It simulate
 ## 🚀 How to Run
 
 ### Option 1: Download as ZIP (Quickest)
-1. **Download**: [Click here to download this project folder](https://github.com/ruorc/portfolio/projects/auth-system/auth-system.zip)
+1. **Download**: [Click here to download this project folder](https://github.com/ruorc/portfolio/tree/main/projects/auth-system/auth-system.zip)
 2. **Extract** the ZIP archive.
 3. **Open the folder** in VS Code and click **"Go Live"**.
    *Note: This project uses ES Modules, so it **must** be run through a server (Live Server).*
