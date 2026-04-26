@@ -1,0 +1,66 @@
+
+#registerForm {
+    text-align: center;
+}
+
+.auth-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.auth-header h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #888;
+    margin: 0;
+}
+
+.login-redirect {
+    margin-top: 1.5rem;
+}
+
+.checkbox-group {
+    text-align: left;
+    font-size: 0.85rem;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.error-text {
+    color: #dc3545;
+    font-size: 0.75rem;
+    text-align: left;
+    display: block;
+    min-height: 1rem;
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
+
+input.invalid-field {
+    border-color: #dc3545;
+}
+
+input:invalid {
+    border-color: #ffcccc;
+}
+
+#passwordComplexity {
+    font-size: 0.75rem; 
+    text-align: left; 
+    color: #666; 
+    margin-top: -8px;
+}

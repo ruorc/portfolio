@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/register.css">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-header">
+            <h2>Create Your Account</h2>
+            <p class="subtitle">Please fill in the details below</p>
+        </div>
+
+        <form id="registerForm">
+            <input type="text" id="firstName" placeholder="First Name *" required>
+            <span class="error-text" id="err-firstName"></span>
+
+            <input type="text" id="lastName" placeholder="Last Name *" required>
+            <span class="error-text" id="err-lastName"></span>
+
+            <input type="text" id="nickname" placeholder="Nickname">
+            <span class="error-text" id="err-nickName"></span>
+
+            <input type="date" id="dob" placeholder="Date of Birth">
+
+            <input type="tel" id="phone" placeholder="Phone Number *" required>
+            <span class="error-text" id="err-phone"></span>
+
+            <input type="email" id="email" placeholder="Email *" required>
+            <span class="error-text" id="err-email"></span>
+
+            <input type="password" id="password" placeholder="Password *" required>
+            <div id="passwordComplexity"></div>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password *" required>
+
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="notifications"> Receive notifications</label>
+                <label>
+                    <input type="checkbox" id="terms" disabled>
+                    I agree to <a href="#" id="termsLink">Terms & Conditions</a> *
+                </label>
+            </div>
+
+            <button type="submit" id="regBtn" disabled>Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+
+    <script type="module" src="scripts/register.js"></script>
+</body>
+
+</html>
