@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="styles/welcome.css">
+</head>
+<body>
+    <div id="welcomeContent">
+        <h1>Welcome!</h1>
+        <p><strong>Full Name:</strong> <span id="fullName"></span></p>
+        <p><strong>Nickname:</strong> <span id="nickname"></span></p>
+        <p><strong>Date of Birth:</strong> <span id="dob"></span></p>
+        <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        const user = JSON.parse(sessionStorage.getItem('currentUser'));
+
+        if (!user) {
+            window.location.href = 'login.html';
+        } else {
+            document.getElementById('fullName').textContent = `${user.firstName} ${user.lastName}`;
+            document.getElementById('nickname').textContent = user.nickname;
+            document.getElementById('dob').textContent = user.birthDate;
+            document.getElementById('displayEmail').textContent = user.email;
+        }
+
+        function logout() {
+            sessionStorage.clear();
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
