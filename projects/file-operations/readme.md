@@ -4,7 +4,10 @@
   <img src="images/file-operations.png" alt="File Operations (CRUD) Preview" width="600">
 </p>
 
-A professional browser-based text editor that provides a desktop-like experience. It features direct local file access, custom asynchronous modal dialogs, and a robust fallback system for maximum browser compatibility.
+A technical demonstration of the File System Access API, showcasing native-like file interaction (Read/Write) 
+directly with the local disk. It features a sophisticated dual-layer architecture that provides high-performance 
+functionality for modern browsers while maintaining a robust legacy fallback system for older environments, 
+ensuring seamless file handling across all platforms.
 
 ## 🚀 How to Run
 
