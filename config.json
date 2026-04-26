@@ -4,8 +4,8 @@
     "transitionDelay": 200
   },
   "pages": {
-    "home": { "hasScript": false, "hasStyle": true },
-    "about": { "hasScript": false, "hasStyle": true },
+    "home": { "hasScript": false, "hasStyle": false },
+    "about": { "hasScript": false, "hasStyle": false },
     "projects": { "hasScript": true, "hasStyle": true },
     "contact": { "hasScript": false, "hasStyle": false },
     "error": { "hasScript": false, "hasStyle": false },
