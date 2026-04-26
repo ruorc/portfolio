@@ -1,4 +1,4 @@
-# Hi there, I'm [Alexey Alexenitser] | Fullstack Developer 🚀
+# Hi there, I'm **Alexey Alexenitser** | Fullstack Developer 🚀
 
 I build scalable web applications and interactive systems focusing on performance, security, and clean architecture. My expertise covers building custom engines with Vanilla JS and developing robust solutions within the WordPress ecosystem.
 
